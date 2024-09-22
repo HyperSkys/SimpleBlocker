@@ -15,20 +15,28 @@ import java.util.Arrays;
 
 public class CommandListener implements Listener {
 
+    /**
+     * Listens for the PlayerCommandPreprocessEvent and checks if the command is blocked.
+     * @param event Provided by the event handler.
+     */
     @EventHandler
     public void onPlayerCommandPreprocessEvent(PlayerCommandPreprocessEvent event) {
         Player player = event.getPlayer();
-        String rawCommand = event.getMessage().substring(1).split(" ")[0];
-        if (isCommandBlocked(rawCommand, player)) {
-            event.setCancelled(true);
+        String command = event.getMessage().substring(1).split(" ")[0];
+        if (isCommandBlocked(command, player)) {
             player.sendMessage(Configuration.BLOCKED_MESSAGE.getAsComponent());
             player.sendActionBar(Configuration.BLOCKED_ACTIONBAR_MESSAGE.getAsComponent());
             if (Configuration.SOUND.getAsSound() != null) {
                 player.playSound(player.getLocation(), Configuration.SOUND.getAsSound(), 1, 1);
             }
+            event.setCancelled(true);
         }
     }
 
+    /**
+     * Listens for the UnknownCommandEvent and sends the unknown command message.
+     * @param event Provided by the event handler.
+     */
     @EventHandler
     public void onUnknownCommandEvent(UnknownCommandEvent event) {
         event.message(Configuration.UNKNOWN_COMMAND_MESSAGE.getAsComponent());
@@ -40,19 +48,33 @@ public class CommandListener implements Listener {
         }
     }
 
+    /**
+     * Listens for the TabCompleteEvent and checks if the command is blocked.
+     * @param event Provided by the event handler.
+     */
     @EventHandler
     public void onTabCompleteEvent(TabCompleteEvent event) {
-        String commandName = event.getBuffer().split(" ")[0];
-        if (isCommandBlocked(commandName, (Player) event.getSender())) {
+        String command = event.getBuffer().split(" ")[0];
+        if (isCommandBlocked(command, (Player) event.getSender())) {
             event.setCancelled(true);
         }
     }
 
+    /**
+     * Listens for the PlayerCommandSendEvent and removes blocked commands from the list.
+     * @param event Provided by the event handler.
+     */
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerCommandSend(PlayerCommandSendEvent event) {
         event.getCommands().removeIf(command -> isCommandBlocked(command, event.getPlayer()));
     }
 
+    /**
+     * Checks if a command is blocked based on the configuration settings.
+     * @param command The command to check.
+     * @param player The player to check.
+     * @return If the command is blocked.
+     */
     private boolean isCommandBlocked(String command, Player player) {
         boolean blockNamespaced = Configuration.BLOCK_NAMESPACED_COMMANDS.getAsBoolean();
         boolean blockAllCommands = Configuration.BLOCK_ALL_COMMANDS.getAsBoolean();

@@ -24,6 +24,10 @@ public class ConfigurationManager {
         this.configurationMap = new HashMap<>();
     }
 
+    /**
+     * Create a configuration file with the specified file name
+     * @param fileName The name of the configuration file to create
+     */
     public void createConfigurationFile(String fileName) {
         try {
             File file = new File(SimpleBlocker.getInstance().getDataFolder(), fileName + ".yml");
@@ -45,6 +49,11 @@ public class ConfigurationManager {
         }
     }
 
+    /**
+     * Get the configuration file with the specified file name
+     * @param fileName The name of the configuration file to get
+     * @return The configuration file
+     */
     public FileConfiguration getConfigurationFile(String fileName) {
         if (!configurationMap.containsKey(fileName)) {
             throw new ConfigurationNotFoundException("Configuration file not found: " + fileName + ".yml");
@@ -53,6 +62,10 @@ public class ConfigurationManager {
         return configurationMap.get(fileName);
     }
 
+    /**
+     * Reload the configuration file with the specified file name
+     * @param fileName The name of the configuration file to reload
+     */
     public void reloadConfiguration(String fileName) {
         File file = new File(SimpleBlocker.getInstance().getDataFolder(), fileName + ".yml");
         FileConfiguration fileConfiguration = YamlConfiguration.loadConfiguration(file);

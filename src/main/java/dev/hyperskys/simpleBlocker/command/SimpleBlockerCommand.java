@@ -14,6 +14,10 @@ import java.util.Arrays;
 @CommandPermission("simpleblocker.command.help")
 public class SimpleBlockerCommand {
 
+    /**
+     * The default command for the /simpleblocker command, which displays the help message.
+     * @param sender Provided by the command framework.
+     */
     @DefaultFor("simpleblocker")
     public void onSimpleBlockerCommand(CommandSender sender) {
         sender.sendMessage(MiniMessage.miniMessage().deserialize("<gray><st>-------------------------------"));
@@ -27,6 +31,10 @@ public class SimpleBlockerCommand {
         sender.sendMessage(MiniMessage.miniMessage().deserialize("<gray><st>-------------------------------"));
     }
 
+    /**
+     * The /simpleblocker list command, which lists all blocked commands.
+     * @param sender Provided by the command framework.
+     */
     @Subcommand("list")
     @CommandPermission("simpleblocker.command.list")
     public void onSimpleBlockerListCommand(CommandSender sender) {
@@ -38,6 +46,10 @@ public class SimpleBlockerCommand {
         sender.sendMessage(MiniMessage.miniMessage().deserialize("<gray><st>-------------------------------"));
     }
 
+    /**
+     * The /simpleblocker reload command, which reloads the configuration file.
+     * @param sender Provided by the command framework.
+     */
     @Subcommand("reload")
     @CommandPermission("simpleblocker.command.reload")
     public void onSimpleBlockerReloadCommand(CommandSender sender) {

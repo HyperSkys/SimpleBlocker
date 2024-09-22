@@ -28,26 +28,42 @@ public enum Configuration {
         this.path = path;
     }
 
+    /**
+     * Get the value of the path in the configuration as a component.
+     * @return The value of the path in the configuration as a component.
+     */
     public Component getAsComponent() {
         String message = SimpleBlocker.getInstance().getConfigurationManager().getConfigurationFile("config").getString(path);
         if (message == null)
-            throw new ConfigurationAttributeNotFoundException("The message with the path '" + path + "' was not found in the configuration file.");
+            throw new ConfigurationAttributeNotFoundException("The component with the path '" + path + "' was not found in the configuration file.");
         return MiniMessage.miniMessage().deserialize(message);
     }
 
+    /**
+     * Get the value of the path in the configuration as a string array.
+     * @return The value of the path in the configuration as a string array.
+     */
     public String[] getAsStringArray() {
         String[] messages = SimpleBlocker.getInstance().getConfigurationManager().getConfigurationFile("config").getStringList(path).toArray(new String[0]);
         if (messages.length == 0)
-            throw new ConfigurationAttributeNotFoundException("The array with the path '" + path + "' was not found in the configuration file.");
+            throw new ConfigurationAttributeNotFoundException("The string array with the path '" + path + "' was not found in the configuration file.");
         return messages;
     }
 
+    /**
+     * Get the value of the path in the configuration as a boolean.
+     * @return The value of the path in the configuration as a boolean.
+     */
     public boolean getAsBoolean() {
         if (!SimpleBlocker.getInstance().getConfigurationManager().getConfigurationFile("config").contains(path))
             throw new ConfigurationAttributeNotFoundException("The boolean with the path '" + path + "' was not found in the configuration file.");
         return SimpleBlocker.getInstance().getConfigurationManager().getConfigurationFile("config").getBoolean(path);
     }
 
+    /**
+     * Get the value of the path in the configuration as a map.
+     * @return The value of the path in the configuration as a map.
+     */
     public HashMap<String, String> getAsMap() {
         if (!SimpleBlocker.getInstance().getConfigurationManager().getConfigurationFile("config").contains(path))
             throw new ConfigurationAttributeNotFoundException("The map with the path '" + path + "' was not found in the configuration file.");
@@ -67,12 +83,20 @@ public enum Configuration {
         return map;
     }
 
+    /**
+     * Get the value of the path in the configuration as a sound.
+     * @return The value of the path in the configuration as a sound.
+     */
     public Sound getAsSound() {
         if (!SimpleBlocker.getInstance().getConfigurationManager().getConfigurationFile("config").contains(path))
             throw new ConfigurationAttributeNotFoundException("The sound with the path '" + path + "' was not found in the configuration file.");
         return Sound.valueOf(SimpleBlocker.getInstance().getConfigurationManager().getConfigurationFile("config").getString(path));
     }
 
+    /**
+     * Reload the configuration file.
+     * @see dev.hyperskys.simpleBlocker.configuration.ConfigurationManager#reloadConfiguration(String)
+     */
     public static void reloadConfiguration() {
         SimpleBlocker.getInstance().getConfigurationManager().reloadConfiguration("config");
     }
