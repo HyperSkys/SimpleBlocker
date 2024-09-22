@@ -28,16 +28,21 @@ public class ConfigurationManager {
      * Create a configuration file with the specified file name
      * @param fileName The name of the configuration file to create
      */
+    @SuppressWarnings("ResultOfMethodCallIgnored")
     public void createConfigurationFile(String fileName) {
         try {
             File file = new File(SimpleBlocker.getInstance().getDataFolder(), fileName + ".yml");
 
             if (!file.exists()) {
-                file.getParentFile().mkdirs();
                 InputStream inputStream = SimpleBlocker.getInstance().getResource(fileName + ".yml");
-                FileWriter fileWriter = new FileWriter(file);
-                fileWriter.write(new String(inputStream.readAllBytes()));
-                fileWriter.close();
+                if (inputStream != null) {
+                    file.getParentFile().mkdirs();
+                    FileWriter fileWriter = new FileWriter(file);
+                    fileWriter.write(new String(inputStream.readAllBytes()));
+                    fileWriter.close();
+                } else {
+                    throw new ConfigurationCreateException("Configuration file not found: " + fileName + ".yml");
+                }
             }
 
             FileConfiguration fileConfiguration = new YamlConfiguration();

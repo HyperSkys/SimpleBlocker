@@ -7,7 +7,13 @@ package dev.hyperskys.simpleBlocker.exceptions;
  * @see dev.hyperskys.simpleBlocker.configuration.ConfigurationManager#createConfigurationFile(String)
  */
 public class ConfigurationCreateException extends RuntimeException {
+
     public ConfigurationCreateException(Throwable cause) {
         super(cause);
     }
+
+    public ConfigurationCreateException(String message) {
+        super(message);
+    }
+
 }

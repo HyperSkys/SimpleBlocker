@@ -12,6 +12,7 @@ import java.util.Arrays;
 
 @Command("simpleblocker")
 @CommandPermission("simpleblocker.command.help")
+@SuppressWarnings("unused")
 public class SimpleBlockerCommand {
 
     /**
@@ -40,9 +41,8 @@ public class SimpleBlockerCommand {
     public void onSimpleBlockerListCommand(CommandSender sender) {
         sender.sendMessage(MiniMessage.miniMessage().deserialize("<gray><st>-------------------------------"));
         sender.sendMessage(MiniMessage.miniMessage().deserialize("<red>Blocked Commands:"));
-        Arrays.stream(Configuration.BLOCKED_COMMANDS.getAsStringArray()).forEach(blockedCommand -> {
-            sender.sendMessage(MiniMessage.miniMessage().deserialize(" <gray>- <white>/" + blockedCommand));
-        });
+        Arrays.stream(Configuration.BLOCKED_COMMANDS.getAsStringArray()).forEach(blockedCommand ->
+                sender.sendMessage(MiniMessage.miniMessage().deserialize(" <gray>- <white>/" + blockedCommand)));
         sender.sendMessage(MiniMessage.miniMessage().deserialize("<gray><st>-------------------------------"));
     }
 
