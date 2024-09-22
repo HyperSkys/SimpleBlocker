@@ -23,7 +23,7 @@ public class SimpleBlockerCommand {
     public void onSimpleBlockerCommand(CommandSender sender) {
         sender.sendMessage(MiniMessage.miniMessage().deserialize("<gray><st>-------------------------------"));
         sender.sendMessage(MiniMessage.miniMessage().deserialize("<dark_red><bold>SimpleBlocker"));
-        sender.sendMessage(MiniMessage.miniMessage().deserialize("<gray><italic>Version: 1.0.0"));
+        sender.sendMessage(MiniMessage.miniMessage().deserialize("<gray><italic>Version: 1.0.2-REL"));
         sender.sendMessage("");
         sender.sendMessage(MiniMessage.miniMessage().deserialize("<red>Available Commands:"));
         sender.sendMessage(MiniMessage.miniMessage().deserialize(" <gray>- <white>/simpleblocker list"));

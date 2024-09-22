@@ -81,7 +81,7 @@ If you have a suggestion for the plugin, please create a new issue in the [Issue
 
 ### Pull Requests
 
-If you would like to contribute to the plugin, you can create a pull request and we will review it. Please make sure to follow the Code of Conduct below when creating a pull request.
+If you would like to contribute to the plugin, you can create a pull request, and we will review it. Please make sure to follow the Code of Conduct below when creating a pull request.
 
 ### Code of Conduct
 

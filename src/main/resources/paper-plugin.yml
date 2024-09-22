@@ -1,5 +1,5 @@
 name: "SimpleBlocker"
-version: "1.0.1-REL"
+version: "1.0.2-REL"
 main: "dev.hyperskys.simpleBlocker.SimpleBlocker"
 api-version: "1.21"
 authors:

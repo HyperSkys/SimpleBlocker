@@ -7,7 +7,7 @@
     <groupId>dev.hyperskys</groupId>
     <artifactId>SimpleBlocker</artifactId>
     <name>SimpleBlocker</name>
-    <version>1.0.1-REL</version>
+    <version>1.0.2-REL</version>
     <packaging>jar</packaging>
 
     <developers>
