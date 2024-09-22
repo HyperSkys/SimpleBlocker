@@ -27,8 +27,8 @@ body:
   - type: input
     id: spigot-version
     attributes:
-      label: Server Version
-      description: What server version are you using?
+      label: Paper Version
+      description: What paper version are you using?
       placeholder: Paper 1.21.1
     validations:
       required: true

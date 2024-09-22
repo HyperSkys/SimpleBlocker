@@ -16,7 +16,7 @@ Settings:
   blocked-commands:
     - version
     - plugins
-    - "?" # If it uses a symbol or special character, use the command in quotes.
+    - "?" # If command uses a symbol or special character, use the command in quotes.
     - thiscommandisnotblockedforvip
     - thiscommandisnotblockedformvp
   groups:

@@ -40,7 +40,7 @@ public class CommandListener implements Listener {
         }
     }
 
-    @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
+    @EventHandler
     public void onTabCompleteEvent(TabCompleteEvent event) {
         String commandName = event.getBuffer().split(" ")[0];
         if (isCommandBlocked(commandName, (Player) event.getSender())) {

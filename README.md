@@ -8,21 +8,24 @@
 
 ### Download Instructions
 
-You can download SimpleBlocker and use it on your projects by heading to the releases tab and downloading the latest release available, if you download a beta releasing you agree that any bugs that occur are expected.
+You can download SimpleBlocker and use it on your server by heading to the releases tab and downloading the latest release available, if you download a beta release you may encounter bugs and issues that are not present in the stable release.
 
 ### Requirements
 
 - Java 21 or higher
-- Spigot/Paper 1.21 or higher
-- A server that can run the above requirements
+- Paper Server running Minecraft 1.21 or higher
 
 ### Installation
 
 1. Download the latest release from the releases tab.
 2. Place the downloaded jar file in your plugins folder.
 3. Restart your server.
-4. Enjoy!
-5. (Optional) Configure the plugin to your liking.
+4. Configure the plugin to your liking.
+5. Enjoy!
+
+### Warning
+
+This plugin is only compatible with Paper servers running Minecraft 1.21 or higher, using this plugin on any other server software or version may cause issues and is not recommended. Most of the time, the plugin will not even load on other server software or versions.
 
 ## License
-This project is licensed under [Eclipse Public License](https://github.com/HyperSkys/SimpleBlocker/blob/master/LICENSE)
+This project is licensed under the [Eclipse Public License](https://github.com/HyperSkys/SimpleBlocker/blob/master/LICENSE)
