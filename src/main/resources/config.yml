@@ -1,0 +1,22 @@
+# SimpleCommandBlocker - Configuration File
+# This file is used to configure the plugin settings and messages.
+
+Settings:
+  block-all-commands: false
+  block-namespaced-commands: true
+  sound: "ENTITY_VILLAGER_NO" # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
+  blocked-commands:
+    - version
+    - plugins
+    - thiscommandisnotblockedforvip
+    - thiscommandisnotblockedformvp
+  groups:
+    mvp:
+      - thiscommandisnotblockedformvp
+    vip:
+      - thiscommandisnotblockedforvip
+Messages:
+  blocked-message: "<red>This command is blocked"
+  blocked-actionbar: "<red>This command is blocked"
+  unknown-command-message: "<red>Unknown command."
+  unknown-command-actionbar: "<red>Unknown command."

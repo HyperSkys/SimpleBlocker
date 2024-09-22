@@ -1,0 +1,9 @@
+name: "SimpleBlocker"
+version: "1.0.0-REL"
+main: "dev.hyperskys.simpleBlocker.SimpleBlocker"
+api-version: "1.21"
+authors:
+  - "HyperSkys"
+  - "BadBird5907"
+description: "Allows the server owner to block commands from showing when user does not have permission to use those commands."
+website: "www.hyperskys.dev"
