@@ -25,4 +25,4 @@ You can download SimpleBlocker and use it on your projects by heading to the rel
 5. (Optional) Configure the plugin to your liking.
 
 ## License
-This project is licensed under [Eclipse Public License](https://github.com/HyperSkys/SimpleBlocker/blob/main/LICENSE)
+This project is licensed under [Eclipse Public License](https://github.com/HyperSkys/SimpleBlocker/blob/master/LICENSE)

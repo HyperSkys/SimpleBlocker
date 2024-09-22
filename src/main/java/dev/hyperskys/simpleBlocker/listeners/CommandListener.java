@@ -58,7 +58,7 @@ public class CommandListener implements Listener {
         boolean blockAllCommands = Configuration.BLOCK_ALL_COMMANDS.getAsBoolean();
         String[] blockedCommands = Configuration.BLOCKED_COMMANDS.getAsStringArray();
 
-        if (command.contains(":") && blockNamespaced && !player.hasPermission("simplecommandblocker.bypass.namespaced")) {
+        if (command.contains(":") && blockNamespaced && !player.hasPermission("simpleblocker.bypass.namespaced")) {
             return true;
         }
 

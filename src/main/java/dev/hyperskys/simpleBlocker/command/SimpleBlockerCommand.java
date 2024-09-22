@@ -8,6 +8,8 @@ import revxrsal.commands.annotation.DefaultFor;
 import revxrsal.commands.annotation.Subcommand;
 import revxrsal.commands.bukkit.annotation.CommandPermission;
 
+import java.util.Arrays;
+
 @Command("simpleblocker")
 @CommandPermission("simpleblocker.command.help")
 public class SimpleBlockerCommand {
@@ -28,12 +30,11 @@ public class SimpleBlockerCommand {
     @Subcommand("list")
     @CommandPermission("simpleblocker.command.list")
     public void onSimpleBlockerListCommand(CommandSender sender) {
-        String[] blockedCommands = Configuration.BLOCKED_COMMANDS.getAsStringArray();
         sender.sendMessage(MiniMessage.miniMessage().deserialize("<gray><st>-------------------------------"));
         sender.sendMessage(MiniMessage.miniMessage().deserialize("<red>Blocked Commands:"));
-        for (String blockedCommand : blockedCommands) {
+        Arrays.stream(Configuration.BLOCKED_COMMANDS.getAsStringArray()).forEach(blockedCommand -> {
             sender.sendMessage(MiniMessage.miniMessage().deserialize(" <gray>- <white>/" + blockedCommand));
-        }
+        });
         sender.sendMessage(MiniMessage.miniMessage().deserialize("<gray><st>-------------------------------"));
     }
 

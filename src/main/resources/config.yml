@@ -1,19 +1,28 @@
 # SimpleCommandBlocker - Configuration File
 # This file is used to configure the plugin settings and messages.
 
+# Permissions:
+# - simpleblocker.command.help - Allows the player to view the help command.
+# - simpleblocker.command.list - Allows the player to view the list of blocked commands.
+# - simpleblocker.command.reload - Allows the player to reload the configuration.
+# - simpleblocker.bypass.<command> - Allows the player to bypass a blocked command.
+# - simpleblocker.bypass.namespaced - Allows the player to bypass blocked namespaced commands. (ex: minecraft:version)
+# - group.<group> - Allows the player to be in a group and bypass blocked commands for that group.
+
 Settings:
   block-all-commands: false
   block-namespaced-commands: true
-  sound: "ENTITY_VILLAGER_NO" # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
+  sound: "ENTITY_VILLAGER_NO" # https://jd.papermc.io/paper/1.21.1/org/bukkit/Sound.html
   blocked-commands:
     - version
     - plugins
+    - "?" # If it uses a symbol or special character, use the command in quotes.
     - thiscommandisnotblockedforvip
     - thiscommandisnotblockedformvp
   groups:
-    mvp:
+    mvp: # (Permission: group.mvp)
       - thiscommandisnotblockedformvp
-    vip:
+    vip: # (Permission: group.vip)
       - thiscommandisnotblockedforvip
 Messages:
   blocked-message: "<red>This command is blocked"
