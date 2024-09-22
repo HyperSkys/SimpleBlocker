@@ -22,11 +22,11 @@ public final class SimpleBlocker extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        Bukkit.getPluginManager().registerEvents(new CommandListener(), this);
         BukkitCommandHandler commandHandler = BukkitCommandHandler.create(this);
         commandHandler.register(new SimpleBlockerCommand());
         commandHandler.registerBrigadier();
         configurationManager.createConfigurationFile("config");
+        Bukkit.getPluginManager().registerEvents(new CommandListener(), this);
     }
 
 }

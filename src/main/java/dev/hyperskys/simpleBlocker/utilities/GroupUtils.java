@@ -10,12 +10,12 @@ public class GroupUtils {
     /**
      * Get the group that the player is in
      * @param player The player to get the group of
-     * @return The group that the player is in
+     * @return The first found group that the player is in
      */
     public static String getGroup(Player player) {
         HashMap<String, String> groups = Configuration.GROUPS.getAsMap();
         for (String group : groups.keySet()) {
-            if (player.hasPermission("group." + group)) {
+            if (player.hasPermission("simpleblocker.group." + group)) {
                 return group;
             }
         }
