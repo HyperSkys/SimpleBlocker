@@ -34,6 +34,7 @@ Settings:
   block-namespaced-commands: true
   sound: "ENTITY_VILLAGER_NO" # https://jd.papermc.io/paper/1.21.1/org/bukkit/Sound.html
   blocked-commands:
+    - about
     - version
     - ver
     - plugins
